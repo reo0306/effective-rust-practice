@@ -15,4 +15,8 @@ fn main() {
         Some(i) => println!("field is {i}"),
         None => {}
     }
+
+    if let Some(i) = &s.field {
+        println!("field is {i}");
+    }
 }
