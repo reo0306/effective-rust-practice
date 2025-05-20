@@ -62,6 +62,11 @@ impl DetailBuilder {
     }
 }
 
+/*fn dangle() -> &'static i64 {
+    let x: i64 = 32;
+    x
+}*/
+
 fn main() {
     let amount_to_add = 3;
     let add_n = |y| {
@@ -126,4 +131,30 @@ fn main() {
     .just_seen()
     .build();
     println!("{:?}", also_bob);
+
+    let values: Vec<u64> = vec![1,1,2,3,5];
+
+    let mut even_sum_squares = 0;
+    let mut even_count = 0;
+    for i in 0..values.len() {
+        if values[i] % 2 != 0 {
+            continue;
+        }
+
+        even_sum_squares += values[i] * values[i];
+        even_count += 1;
+        if even_count == 5 {
+            break;
+        }
+    }
+
+    let even_sum_squares2: u64 = values
+        .iter()
+        .filter(|x| *x % 2 == 0)
+        .take(5)
+        .map(|x| x * x)
+        .sum();
+
+    println!("{}", even_sum_squares);
+    println!("{}", even_sum_squares2);
 }
