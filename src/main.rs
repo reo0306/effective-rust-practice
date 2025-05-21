@@ -62,10 +62,13 @@ impl DetailBuilder {
     }
 }
 
-/*fn dangle() -> &'static i64 {
-    let x: i64 = 32;
-    x
-}*/
+#[derive(Default)]
+enum IceCreamFlavor {
+    Chocolate,
+    Strawberry,
+    #[default]
+    Vailla,
+}
 
 fn main() {
     let amount_to_add = 3;
