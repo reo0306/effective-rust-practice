@@ -70,6 +70,14 @@ enum IceCreamFlavor {
     Vailla,
 }
 
+#[derive(Debug, Default)]
+struct Color {
+    red: u8,
+    green: u8,
+    blue: u8,
+    alpha: u8,
+}
+
 fn main() {
     let amount_to_add = 3;
     let add_n = |y| {
@@ -160,4 +168,10 @@ fn main() {
 
     println!("{}", even_sum_squares);
     println!("{}", even_sum_squares2);
+
+    let c = Color {
+        red: 128,
+        ..Default::default()
+    };
+    println!("{:?}", c);
 }
